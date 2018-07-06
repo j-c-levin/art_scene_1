@@ -24,7 +24,8 @@
     "browser-sync-webpack-plugin": "^1.2.0",
     "html-webpack-plugin": "^2.30.1",
     "raw-loader": "^0.5.1",
-    "typescript": "^2.7.2",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2",
     "webpack": "3.11.0"
   },
   "dependencies": {
