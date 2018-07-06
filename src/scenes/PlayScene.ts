@@ -13,6 +13,7 @@ class TestScene extends Phaser.Scene {
 	}
 
 	public create() {
+		// Set up forest background
 		const scale = 3;
 		const background: Phaser.GameObjects.Sprite[] = [];
 		background.push(this.add.sprite((272 * scale) / 2, (160 * scale) / 2, 'forest-back'));
@@ -20,6 +21,9 @@ class TestScene extends Phaser.Scene {
 		background.push(this.add.sprite((272 * scale) / 2, (160 * scale) / 2, 'forest-front'));
 		background.push(this.add.sprite((272 * scale) / 2, (160 * scale) / 2, 'forest-lights'));
 		background.forEach((sprite) => sprite.setScale(scale, scale));
+		// Set up campfire
+		// Set up person
+		// Set up phone
 	}
 
 	public update(time: number, delta: number) {
