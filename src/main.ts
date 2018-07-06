@@ -1,12 +1,17 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import 'phaser';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+import TestScene from './scenes/PlayScene';
 
-if (environment.production) {
-  enableProdMode();
-}
+const config:GameConfig = {
+    type: Phaser.AUTO,
+    parent: 'content',
+    width: 640,
+    height: 480,
+    resolution: 1, 
+    backgroundColor: "#EDEEC9",
+    scene: [
+      TestScene
+    ]
+};
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+new Phaser.Game(config);

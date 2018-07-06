@@ -1,27 +1,59 @@
-# Scene
+# Phaser 3 Typescript Webpack Boilerplate
+![screenshot](https://i.imgur.com/XXyX8KO.png)
+![screenshot](https://i.imgur.com/YuzMdYi.png)
+![screenshot](https://i.imgur.com/GIdIa5q.png)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+# Setup
+You’ll need to install a few things before you have a working copy of the project.
 
-## Development server
+## 1. Clone this repo:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Navigate into your workspace directory.
 
-## Code scaffolding
+Run:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```git clone https://github.com/troyedwardsjr/phaser3-typescript-webpack.git```
 
-## Build
+## 2. Install node.js and npm:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+https://nodejs.org/en/
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 3. Install dependencies (optionally you could install [yarn](https://yarnpkg.com/)):
 
-## Running end-to-end tests
+Navigate to the cloned repo’s directory.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run:
 
-## Further help
+```npm install```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+or if you choose yarn, just run ```yarn```
+
+## 4. Run the development server:
+
+Run:
+
+```npm run dev```
+
+This will run a server so you can run the game in a browser.
+
+Open your browser and enter localhost:3000 into the address bar.
+
+Also this will start a watch process, so you can change the source and the process will recompile and refresh the browser
+
+
+## Build for deployment:
+
+Run:
+
+```npm run deploy```
+
+This will optimize and minimize the compiled bundle.
+
+## Credits
+
+This work is based off of several existing repos:
+
+https://github.com/nkholski/phaser3-es6-webpack
+
+https://github.com/lean/phaser-es6-webpack
