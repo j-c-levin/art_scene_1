@@ -1,23 +1,31 @@
-class TestScene extends Phaser.Scene {	
+class TestScene extends Phaser.Scene {
 	constructor() {
 		super({
-			key: 'TestScene'
+			key: 'TestScene',
 		});
 	}
 
-	preload() {
+	public preload() {
 		this.load.image('forest-back', '/assets/sprites/parallax-forest-back-trees.png');
 		this.load.image('forest-front', '/assets/sprites/parallax-forest-front-trees.png');
+		this.load.image('forest-middle', '/assets/sprites/parallax-forest-middle-trees.png');
+		this.load.image('forest-lights', '/assets/sprites/parallax-forest-lights.png');
 	}
 
-	create() {
-		const forestBack = this.add.sprite(0, 0, 'forest-back');
-		forestBack.setScale(1, 1);
-		const forestFront = this.add.sprite(0, 0, 'forest-front');
-		forestFront.setScale(1, 1);
+	public create() {
+		const scale = 3;
+		const forestBack = this.add.sprite((272 * scale) / 2, (160 * scale) / 2, 'forest-back');
+		forestBack.setScale(scale, scale);
+		const forestMiddle = this.add.sprite((272 * scale) / 2, (160 * scale) / 2, 'forest-middle');
+		forestMiddle.setScale(scale, scale);
+		const forestFront = this.add.sprite((272 * scale) / 2, (160 * scale) / 2, 'forest-front');
+		forestFront.setScale(scale, scale);
+		const forestLights = this.add.sprite((272 * scale) / 2, (160 * scale) / 2, 'forest-lights');
+		forestLights.setScale(scale, scale);
 	}
 
-	update(time: number, delta: number) {
+	public update(time: number, delta: number) {
+		// not empty
 	}
 }
 
