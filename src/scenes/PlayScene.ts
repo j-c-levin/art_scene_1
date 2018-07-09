@@ -12,6 +12,8 @@ class TestScene extends Phaser.Scene {
 		this.load.image('forest-lights', '/assets/parallax-forest-lights-tint.png');
 		this.load.spritesheet('fire', '/assets/CampFireFinished.png', { frameWidth: 64, frameHeight: 64 });
 		this.load.image('tent', '/assets/tent-tint.png');
+		this.load.image('body', '/assets/DeadBody.png');
+		this.load.image('phone', '/assets/G2-tint.png');
 	}
 
 	public create() {
@@ -48,7 +50,19 @@ class TestScene extends Phaser.Scene {
 		tent.setScale(0.15, 0.15);
 		tent.setRotation(-0.06);
 		// Set up person
+		const body = this.add.sprite(470, 450, 'body');
+		body.setScale(0.1, 0.1);
+		body.setFlipX(true);
+		// Set up phone shadow
+		const phoneShadow = this.add.sprite(555, 440, 'phone');
+		phoneShadow.setTint(0x000);
+		phoneShadow.setScale(0.55, 0.55);
+		phoneShadow.setRotation(1);
 		// Set up phone
+		const phone = this.add.sprite(560, 440, 'phone');
+		phone.setTint(0x9BA2B2);
+		phone.setScale(0.5, 0.5);
+		phone.setRotation(1);
 		// Scale sprites
 		background.forEach((sprite) => sprite.setScale(scale, scale));
 	}
