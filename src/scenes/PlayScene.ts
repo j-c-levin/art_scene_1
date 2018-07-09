@@ -40,6 +40,8 @@ class TestScene extends Phaser.Scene {
 		const fire = this.add.sprite(700, 330, 'fire');
 		fire.anims.play('campfire');
 		background.push(fire);
+		// Scale sprites
+		background.forEach((sprite) => sprite.setScale(scale, scale));
 		// Set up tent shadow
 		const tentShadow = this.add.sprite(202, 505, 'tent');
 		tentShadow.setScale(0.15, 0.15);
@@ -63,8 +65,6 @@ class TestScene extends Phaser.Scene {
 		phone.setTint(0x9BA2B2);
 		phone.setScale(0.5, 0.5);
 		phone.setRotation(1);
-		// Scale sprites
-		background.forEach((sprite) => sprite.setScale(scale, scale));
 	}
 
 	public update(time: number, delta: number) {
