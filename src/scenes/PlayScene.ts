@@ -65,10 +65,61 @@ class TestScene extends Phaser.Scene {
 		phone.setTint(0x9BA2B2);
 		phone.setScale(0.5, 0.5);
 		phone.setRotation(1);
+		// Set up text animation
+		const messages = [
+			`You're scaring me`,
+			'Are you alright',
+			'Are you still there',
+			'Please say something',
+			'I need to know where you are',
+			'',
+			'Just say something\nSay anything',
+			`You're going to be okay\nI promise`,
+			`Just tell me where you are`,
+			`Please`,
+			'',
+			`Wake up\nDon't go to sleep`,
+			`Not now\nI love you\nDon't go`,
+			`Stop it\nStop pretending`,
+			`I'll make it better\nLet me help you`,
+			`Talk to me\nSay something`,
+			`I can't do this\nI need to hear you`,
+			`Not this time\nIt can't be time`,
+			'',
+			`I can't hear you`,
+		];
+		let index = 0;
+		const text = this.add.text(400, 370, messages[index], { fontSize: '16px', fill: '#fff' });
+		text.setAlpha(0);
+		const tweenDuration = 1500;
+		this.tweens.add({
+			key: 'text',
+			targets: [text],
+			y: 360,
+			alpha: 1,
+			duration: tweenDuration,
+			loopDelay: tweenDuration * 4,
+			loop: -1,
+		});
+		this.tweens.add({
+			key: 'text',
+			targets: [text],
+			y: 350,
+			alpha: 0,
+			duration: tweenDuration,
+			delay: tweenDuration * 3,
+			loopDelay: tweenDuration * 4,
+			loop: -1,
+			onLoop: () => {
+				const temp = Math.floor(Math.random() * (messages.length));
+				index = (temp === index) ? index + 1 : temp;
+				text.setText(messages[index % messages.length]);
+			},
+		});
 	}
 
 	public update(time: number, delta: number) {
-		// not empty
+		// not empty any more
 	}
 }
 
