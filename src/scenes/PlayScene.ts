@@ -74,9 +74,9 @@ class TestScene extends Phaser.Scene {
 		// Set up glow animation
 		this.tweens.add({
 			targets: [glow],
-			alpha: () => Math.random() * 1,
+			alpha: 0,
 			duration: (i, total, target) => (Math.random() * 100),
-			loopDelay: () => Math.random() * 10000,
+			loopDelay: () => Math.random() * (Math.random() * 6000),
 			loop: -1,
 			onLoop: () => {
 				glow.alpha = 1;
