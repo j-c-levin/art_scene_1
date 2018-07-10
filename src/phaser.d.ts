@@ -23842,7 +23842,7 @@ declare namespace Phaser {
              */
             audioSprite(key: string, urls: string | string[], json: object, config: object, audioXhrSettings: object, jsonXhrSettings: object): Phaser.Loader.LoaderPlugin;
 
-            spritesheet(key: string | Phaser.Loader.FileTypes.SpriteSheetFileConfig | Phaser.Loader.FileTypes.SpriteSheetFileConfig[], url?: string, frameConfig?: Phaser.Loader.FileTypes.ImageFrameConfig, xhrSettings?: XHRSettingsObject): Phaser.Loader.LoaderPlugin;
+            spritesheet(key: string, url?: string, frameConfig?: any, xhrSettings?: any): Phaser.Loader.LoaderPlugin;
 
             /**
              * Adds Binary file to the current load queue.
