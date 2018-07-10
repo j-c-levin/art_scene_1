@@ -72,16 +72,7 @@ class TestScene extends Phaser.Scene {
 		glow.setScale(0.5, 0.5);
 		glow.setRotation(1);
 		// Set up glow animation
-		this.tweens.add({
-			targets: [glow],
-			alpha: 0,
-			duration: (i, total, target) => (Math.random() * 100),
-			loopDelay: () => Math.random() * (Math.random() * 6000),
-			loop: -1,
-			onLoop: () => {
-				glow.alpha = 1;
-			},
-		});
+		this.glowTween(glow);
 		// Set up text animation
 		const messages = [
 			`You're scaring me`,
@@ -135,6 +126,20 @@ class TestScene extends Phaser.Scene {
 
 	public update(time: number, delta: number) {
 		// not empty any more
+	}
+
+	private glowTween(glow: any) {
+		this.tweens.add({
+			targets: [glow],
+			alpha: 0.5,
+			duration: (i, total, target) => (Math.random() * 100),
+			delay: Math.random() * 2000,
+			loops: 1,
+			onComplete: () => {
+				glow.alpha = 1;
+				this.glowTween(glow);
+			},
+		});
 	}
 }
 
