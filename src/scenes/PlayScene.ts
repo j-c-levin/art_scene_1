@@ -14,6 +14,7 @@ class TestScene extends Phaser.Scene {
 		this.load.image('tent', '/assets/tent-tint.png');
 		this.load.image('body', '/assets/DeadBody.png');
 		this.load.image('phone', '/assets/G2-tint.png');
+		this.load.image('phone-glow', '/assets/phone-glow.png');
 	}
 
 	public create() {
@@ -56,15 +57,31 @@ class TestScene extends Phaser.Scene {
 		body.setScale(0.1, 0.1);
 		body.setFlipX(true);
 		// Set up phone shadow
-		const phoneShadow = this.add.sprite(555, 440, 'phone');
+		const phoneShadow = this.add.sprite(515, 440, 'phone');
 		phoneShadow.setTint(0x000);
 		phoneShadow.setScale(0.55, 0.55);
 		phoneShadow.setRotation(1);
 		// Set up phone
-		const phone = this.add.sprite(560, 440, 'phone');
+		const phone = this.add.sprite(520, 440, 'phone');
 		phone.setTint(0x9BA2B2);
 		phone.setScale(0.5, 0.5);
 		phone.setRotation(1);
+		// Set up phone glow
+		const glow = this.add.sprite(528, 453, 'phone-glow');
+		glow.setOrigin(1, 0.5);
+		glow.setScale(0.5, 0.5);
+		glow.setRotation(1);
+		// Set up glow animation
+		this.tweens.add({
+			targets: [glow],
+			alpha: () => Math.random() * 1,
+			duration: (i, total, target) => (Math.random() * 100),
+			loopDelay: () => Math.random() * 10000,
+			loop: -1,
+			onLoop: () => {
+				glow.alpha = 1;
+			},
+		});
 		// Set up text animation
 		const messages = [
 			`You're scaring me`,
@@ -76,7 +93,7 @@ class TestScene extends Phaser.Scene {
 			'Just say something\nSay anything',
 			`You're going to be okay\nI promise`,
 			`Just tell me where you are`,
-			`Please`,
+			`     Please`,
 			'',
 			`Wake up\nDon't go to sleep`,
 			`Not now\nI love you\nDon't go`,
@@ -93,7 +110,6 @@ class TestScene extends Phaser.Scene {
 		text.setAlpha(0);
 		const tweenDuration = 1500;
 		this.tweens.add({
-			key: 'text',
 			targets: [text],
 			y: 360,
 			alpha: 1,
@@ -102,7 +118,6 @@ class TestScene extends Phaser.Scene {
 			loop: -1,
 		});
 		this.tweens.add({
-			key: 'text',
 			targets: [text],
 			y: 350,
 			alpha: 0,
