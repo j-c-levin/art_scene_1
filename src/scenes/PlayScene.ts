@@ -95,8 +95,11 @@ class TestScene extends Phaser.Scene {
 			`Not this time\nIt can't be time`,
 			'',
 			`I can't hear you`,
-			`I want to know you're still there`,
 			`Don't do this to me`,
+			`I want to know you're\nstill there`,
+			`I want to help you`,
+			`Let me get help`,
+			`Can you hear me`,
 		];
 		let index = 0;
 		const text = this.add.text(400, 370, messages[index], { fontSize: '16px', fill: '#fff' });
