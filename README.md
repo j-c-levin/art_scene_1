@@ -16,4 +16,4 @@ https://sharp-edison-689787.netlify.com
 
 ## Preview
 
-![Imgur](https://i.imgur.com/cjUszkq.gif)
+![Imgur](http://i.imgur.com/cjUszkq.gif)
