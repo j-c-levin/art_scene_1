@@ -1,5 +1,3 @@
-import * as path from 'path';
-
 class TestScene extends Phaser.Scene {
 	constructor() {
 		super({
@@ -14,7 +12,7 @@ class TestScene extends Phaser.Scene {
 		this.load.image('forest-lights', '/assets/parallax-forest-lights-tint.png');
 		this.load.spritesheet('fire', '/assets/CampFireFinished.png', { frameWidth: 64, frameHeight: 64 });
 		this.load.image('tent', '/assets/tent-tint.png');
-		this.load.image('body', path.join(__dirname, '/assets/DeadBody.png'));
+		this.load.image('body', '/assets/DeadBody.png');
 		this.load.image('phone', '/assets/G2-tint.png');
 		this.load.image('phone-glow', '/assets/phone-glow.png');
 	}
