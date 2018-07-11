@@ -13,5 +13,8 @@
 	"files": [
 		"src/phaser.d.ts",
 		"src/main.ts"
+	],
+	"exclude": [
+		"node_modules"
 	]
 }
