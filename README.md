@@ -16,4 +16,4 @@ https://sharp-edison-689787.netlify.com
 
 ## Preview
 
-![Gif of the result](https://imgur.com/a/aua5ejF "Gif of result")
+![Imgur](https://i.imgur.com/cjUszkq.gifv)
